@@ -77,15 +77,28 @@ namespace MyApp.Services
             }
         }
 
-        public void PrintList()
+        public T GetItem(int position)
         {
-            Node<T> current = _head;
-            while (current != null)
+            if (position == 0)
             {
-                Console.Write(current.Data + " -> ");
-                current = current.Next;
+                return _head.Data;
             }
-            Console.WriteLine("null");
+            else
+            {
+                Node<T> current = _head;
+                int currentIndex = 0;
+
+                while (current != null && currentIndex < position)
+                {
+                    current = current.Next;
+                    currentIndex++;
+                }
+
+                if (current == null)
+                    throw new ArgumentOutOfRangeException("Position is out of bounds.");
+
+                return current.Data;
+            }
         }
     }
 }

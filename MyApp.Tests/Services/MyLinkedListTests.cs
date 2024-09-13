@@ -18,9 +18,16 @@ namespace MyApp.Tests.Services
         {
             _linkedList.Insert(1, 0);
             _linkedList.Insert(2, 1);
-            _linkedList.Insert(3, 1);
+            _linkedList.Insert(3, 2);
 
-            _linkedList.PrintList();
+            var item1 = _linkedList.GetItem(0);
+            var item2 = _linkedList.GetItem(1);
+            var item3 = _linkedList.GetItem(2);
+
+
+            Assert.Equal(1, item1);
+            Assert.Equal(2, item2);
+            Assert.Equal(3, item3);
 
         }
 
@@ -29,11 +36,17 @@ namespace MyApp.Tests.Services
         {
             _linkedList.Insert(1, 0);
             _linkedList.Insert(2, 1);
-            _linkedList.Insert(3, 1);
+            _linkedList.Insert(3, 2);
+
+            var itemBefore = _linkedList.GetItem(1);
+            var item3 = _linkedList.GetItem(2);
 
             _linkedList.Delete(1);
 
-            _linkedList.PrintList();
+            var itemAfter = _linkedList.GetItem(1);
+
+            Assert.NotEqual(itemBefore, itemAfter);
+            Assert.Equal(item3, itemAfter);
 
         }
 

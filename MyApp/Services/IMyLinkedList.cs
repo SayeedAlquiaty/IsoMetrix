@@ -12,6 +12,6 @@ namespace MyApp.Services
 
         void Delete(int position);
 
-        void PrintList();
+        T GetItem(int position);
     }
 }

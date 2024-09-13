@@ -14,4 +14,4 @@ Console.WriteLine($"Result of adding '1,2,3': {stringCalculator.Add("1,2,3")}");
 var linkedList = serviceProvider.GetService<IMyLinkedList<int>>();
 linkedList.Insert(1, 0);
 linkedList.Insert(2, 1);
-linkedList.PrintList();
+Console.WriteLine($"{linkedList.GetItem(0)} -> {linkedList.GetItem(1)}");
