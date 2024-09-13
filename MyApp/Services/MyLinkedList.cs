@@ -82,7 +82,7 @@ namespace MyApp.Services
             Node<T> current = _head;
             while (current != null)
             {
-                Console.WriteLine(current.Data + " -> ");
+                Console.Write(current.Data + " -> ");
                 current = current.Next;
             }
             Console.WriteLine("null");
